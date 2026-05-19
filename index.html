@@ -3,521 +3,243 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emkasa Gourmet - Alimentação Saudável com Propósito</title>
+    <title>Emkasa Gourmet | Alimentação Saudável</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+
     <style>
+        /* Variáveis de Cores (Paleta Saudável/Gourmet) */
+        :root {
+            --primary: #2d5a27;    /* Verde escuro natural */
+            --secondary: #d97736;  /* Laranja terra / apetite */
+            --dark: #2c2c2c;       /* Cinza escuro para texto */
+            --light: #f9f9f6;      /* Fundo bege muito claro */
+            --white: #ffffff;
+        }
+
+        /* Reset Básico */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark);
+            background-color: var(--light);
             line-height: 1.6;
-            color: #2c3e2f;
-            background: #fafaf8;
         }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+
+        /* Tipografia de Destaque */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
         }
-        
-        /* Header */
+
+        /* Cabeçalho */
         header {
-            background: linear-gradient(135deg, #739D64 0%, #5a7d51 100%);
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(115, 157, 100, 0.15);
-        }
-        
-        .logo-header {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            margin-bottom: 10px;
+            padding: 1.5rem 5%;
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
-        
-        .logo-header img {
-            height: 70px;
-            width: auto;
+
+        header img {
+            max-height: 60px; /* Ajuste o tamanho do seu logótipo aqui */
+            object-fit: contain;
         }
-        
-        .tagline {
-            font-size: 16px;
-            font-weight: 300;
-            opacity: 0.95;
-            max-width: 600px;
-            margin: 10px auto 0;
-        }
-        
-        /* Hero */
-        .hero {
-            padding: 80px 0;
-            text-align: center;
-            background: white;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 20px;
-            color: #2c3e2f;
-            line-height: 1.2;
-        }
-        
-        .hero-subtitle {
-            font-size: 20px;
-            color: #5a6b60;
-            margin-bottom: 50px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.8;
-        }
-        
-        .hero-visual {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .visual-item {
-            background: linear-gradient(135deg, #f0f8ed 0%, #e8f5e3 100%);
-            padding: 40px;
-            border-radius: 16px;
-            font-size: 60px;
-        }
-        
-        /* About Chef */
-        .about-chef {
-            background: white;
-            padding: 80px 0;
-            margin: 40px 0;
-        }
-        
-        .about-chef-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .chef-image {
-            width: 100%;
-            height: 350px;
-            background: linear-gradient(135deg, #FFF9C4 0%, #FFE082 100%);
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 150px;
-            box-shadow: 0 8px 24px rgba(115, 157, 100, 0.1);
-        }
-        
-        .chef-text h2 {
-            font-size: 36px;
-            margin-bottom: 25px;
-            color: #2c3e2f;
-            font-weight: 700;
-        }
-        
-        .chef-text p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #5a6b60;
-            margin-bottom: 18px;
-        }
-        
-        .highlight {
-            color: #E63946;
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 0.8rem 1.8rem;
+            text-decoration: none;
+            border-radius: 30px;
             font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
         }
-        
-        /* Boxes */
-        .boxes-section {
-            padding: 80px 0;
+
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-2px);
+        }
+
+        /* Secção Principal (Hero) */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5rem 5%;
+            min-height: 80vh;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 3rem;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            color: #555;
+            max-width: 90%;
+        }
+
+        .hero-image {
+            flex: 1;
+            position: relative;
+        }
+
+        /* Imagem principal com aspeto curvo/moderno */
+        .hero-image img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 20px 100px 20px 100px;
+            box-shadow: 0 20px 40px rgba(45, 90, 39, 0.15);
+        }
+
+        /* Secção de Destaques (Features) */
+        .features {
+            padding: 5rem 5%;
+            background-color: var(--white);
             text-align: center;
-            background: #f9fdf8;
         }
-        
-        .boxes-section h2 {
-            font-size: 40px;
-            margin-bottom: 60px;
-            color: #2c3e2f;
-            font-weight: 700;
+
+        .features h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
         }
-        
-        .boxes-grid {
+
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
-            margin-bottom: 40px;
+            gap: 2.5rem;
         }
-        
-        .box-card {
-            background: white;
-            border: 2px solid #e8f0e5;
-            border-radius: 16px;
-            padding: 45px 35px;
-            text-align: center;
-            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+        .card {
+            background: var(--light);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
         }
-        
-        .box-card:hover {
-            border-color: #739D64;
-            box-shadow: 0 12px 32px rgba(115, 157, 100, 0.18);
-            transform: translateY(-6px);
+
+        .card:hover {
+            transform: translateY(-10px);
         }
-        
-        .box-icon {
-            font-size: 70px;
-            margin-bottom: 25px;
-            display: inline-block;
+
+        .card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
         }
-        
-        .box-card h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-            color: #2c3e2f;
-            font-weight: 700;
+
+        .card-content {
+            padding: 1.5rem;
         }
-        
-        .box-card p {
-            font-size: 15px;
-            color: #5a6b60;
-            line-height: 1.7;
+
+        .card-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
         }
-        
-        /* Features */
-        .features {
-            padding: 80px 0;
-            background: white;
-        }
-        
-        .features h2 {
-            font-size: 36px;
-            margin-bottom: 50px;
-            text-align: center;
-            color: #2c3e2f;
-            font-weight: 700;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .feature-item {
-            padding: 30px;
-            text-align: center;
-        }
-        
-        .feature-icon {
-            font-size: 50px;
-            margin-bottom: 15px;
-        }
-        
-        .feature-item h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: #2c3e2f;
-            font-weight: 600;
-        }
-        
-        .feature-item p {
-            font-size: 14px;
-            color: #5a6b60;
-        }
-        
-        /* CTA */
-        .cta-section {
-            padding: 70px 0;
-            text-align: center;
-            background: linear-gradient(135deg, #739D64 0%, #5a7d51 100%);
-            color: white;
-            border-radius: 16px;
-            margin: 60px 0;
-        }
-        
-        .cta-section h2 {
-            font-size: 36px;
-            margin-bottom: 20px;
-            color: white;
-            font-weight: 700;
-        }
-        
-        .cta-section p {
-            font-size: 18px;
-            margin-bottom: 35px;
-            opacity: 0.95;
-            max-width: 500px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: #25D366;
-            color: white;
-            padding: 18px 50px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 17px;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
-        }
-        
-        .cta-button:hover {
-            background: #1fac59;
-            transform: scale(1.06);
-            box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
-        }
-        
-        /* Instagram Section */
-        .instagram-section {
-            padding: 50px 0;
-            text-align: center;
-            border-top: 2px solid #e8f0e5;
-            border-bottom: 2px solid #e8f0e5;
-            margin: 50px 0;
-            background: white;
-        }
-        
-        .instagram-section h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #2c3e2f;
-            font-weight: 600;
-        }
-        
-        .instagram-link {
-            display: inline-block;
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-            color: white;
-            padding: 14px 35px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s;
-            font-size: 15px;
-        }
-        
-        .instagram-link:hover {
-            transform: scale(1.06);
-            box-shadow: 0 6px 20px rgba(220, 39, 67, 0.3);
-        }
-        
-        /* Footer */
+
+        /* Rodapé */
         footer {
-            background: #2c3e2f;
-            padding: 40px 0;
+            background-color: var(--primary);
+            color: var(--white);
             text-align: center;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 14px;
+            padding: 3rem 5%;
         }
-        
-        footer a {
-            color: #F5E6BC;
-            text-decoration: none;
-            font-weight: 600;
+
+        footer p {
+            opacity: 0.8;
+            font-size: 0.9rem;
         }
-        
-        /* Responsive */
+
+        /* Responsividade para Telemóveis */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 36px;
+            .hero {
+                flex-direction: column;
+                padding: 3rem 5%;
+                text-align: center;
             }
-            
-            .hero-subtitle {
-                font-size: 17px;
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 3rem;
             }
-            
-            .about-chef-content {
-                grid-template-columns: 1fr;
+            .hero-text h1 {
+                font-size: 2.5rem;
             }
-            
-            .boxes-grid {
-                grid-template-columns: 1fr;
+            .hero-text p {
+                max-width: 100%;
             }
-            
-            .chef-text h2 {
-                font-size: 28px;
-            }
-            
-            .boxes-section h2 {
-                font-size: 32px;
-            }
-            
-            .hero-visual {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-section {
-                margin: 40px 0;
+            .hero-image img {
+                height: 400px;
+                border-radius: 20px 50px 20px 50px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+
     <header>
-        <div class="container">
-            <div class="logo-header">
-                <img src="logo-emkasa.png" alt="Emkasa Gourmet Logo">
-            </div>
-            <p class="tagline">Alimentação saudável feita com propósito, afeto e ingredientes vivos</p>
-        </div>
+        <img src="logo-emkasa.png" alt="Emkasa Gourmet Logo">
+        <a href="#contato" class="btn">Faça o seu Pedido</a>
     </header>
-    
-    <!-- Hero -->
-    <div class="container">
-        <section class="hero">
-            <h1>Comida que cuida de você</h1>
-            <p class="hero-subtitle">Selecionamos os melhores alimentos da nossa horta orgânica para entregar nutrição, saúde e bem-estar direto na sua casa, toda semana.</p>
-            <div class="hero-visual">
-                <div class="visual-item">🥬</div>
-                <div class="visual-item">🍃</div>
-                <div class="visual-item">🌱</div>
-            </div>
-        </section>
-    </div>
-    
-    <!-- About Chef -->
-    <div class="container">
-        <section class="about-chef">
-            <div class="about-chef-content">
-                <div class="chef-image">👨‍🍳</div>
-                <div class="chef-text">
-                    <h2>Chef Angela Acioli</h2>
-                    <p><span class="highlight">Mais de 20 anos</span> dedicados à culinária saudável e à vida vegana.</p>
-                    <p>Angela acredita que <span class="highlight">comida também cuida da alma</span>. Cada prato é preparado com amor, ingredientes cuidadosamente selecionados e a missão de nutrir corpo e espírito.</p>
-                    <p>Mãe, mulher de fé, e apaixonada por transformar a forma como as pessoas se alimentam — mais saudável, mais consciente, mais humano.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-    
-    <!-- Features -->
-    <div class="container">
-        <section class="features">
-            <h2>Por que escolher Emkasa?</h2>
-            <div class="features-grid">
-                <div class="feature-item">
-                    <div class="feature-icon">🌾</div>
-                    <h3>Horta Orgânica</h3>
-                    <p>Alimentos 100% orgânicos, plantados com cuidado e colhidos frescos.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">❤️</div>
-                    <h3>Feito com Amor</h3>
-                    <p>Cada refeição é preparada pensando em cuidar de você e sua família.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">✅</div>
-                    <h3>Personalizado</h3>
-                    <p>Adaptamos ao seu gosto, restrições e preferências alimentares.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">📦</div>
-                    <h3>Entrega Semanal</h3>
-                    <p>Seus alimentos frescos chegam na sua casa toda semana.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">🌱</div>
-                    <h3>Responsabilidade</h3>
-                    <p>Compromissado com a sustentabilidade e o bem-estar da comunidade.</p>
-                </div>
-                <div class="feature-item">
-                    <div class="feature-icon">💚</div>
-                    <h3>Saúde em Primeiro Lugar</h3>
-                    <p>Nutrição balanceada e alimentos que realmente cuidam de você.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-    
-    <!-- Boxes -->
-    <div class="container">
-        <section class="boxes-section">
-            <h2>Escolha seu Box Semanal</h2>
-            <div class="boxes-grid">
-                <div class="box-card">
-                    <div class="box-icon">🥬</div>
-                    <h3>Horta Box</h3>
-                    <p>Frutas, verduras e legumes frescos saídos direto da nossa horta orgânica. Alimentação pura e viva para sua mesa.</p>
-                </div>
-                
-                <div class="box-card">
-                    <div class="box-icon">🍱</div>
-                    <h3>Fit Box</h3>
-                    <p>Marmitas nutritivas, farofa nutritiva premium e blends veganos. Refeições práticas, congeladas, prontas para seu dia agitado.</p>
-                </div>
-                
-                <div class="box-card">
-                    <div class="box-icon">🎁</div>
-                    <h3>Box Misto</h3>
-                    <p>O melhor dos dois mundos. Horta fresca + refeições prontas. Praticidade com nutrição completa e equilibrada.</p>
-                </div>
-            </div>
-        </section>
-    </div>
-    
-    <!-- CTA -->
-    <div class="container">
-        <section class="cta-section">
-            <h2>Comece sua transformação hoje</h2>
-            <p>Converse com a gente e escolha o box perfeito para sua rotina. A Chef Angela está esperando por você!</p>
-            <a href="https://wa.me/557930214868?text=Olá%20Emkasa%20Gourmet!%20Gostaria%20de%20saber%20mais%20sobre%20os%20boxes%20semanais." class="cta-button" onclick="alert('⚠️ Atualize o número do WhatsApp no código (procure por SEUNUMEROWPP)'); return false;">
-                💬 Conversar no WhatsApp
-            </a>
-        </section>
-    </div>
-    
-    <!-- Instagram -->
-    <div class="container">
-        <section class="instagram-section">
-            <h3>Acompanhe nosso dia a dia na horta e nas cozinhas</h3>
-            <a href="https://instagram.com/emkasagourmet/" target="_blank" class="instagram-link">
-                📷 Siga @emkasagourmet
-            </a>
-        </section>
-    </div>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Emkasa Gourmet — Feito com amor, nutrição e propósito. 💚<br>
-            <a href="https://instagram.com/emkasagourmet/" target="_blank">Instagram</a> • 
-            <a href="https://wa.me/557930214868" target="_blank">WhatsApp</a>
-            </p>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Saúde e Sabor em perfeita harmonia.</h1>
+            <p>Descubra a verdadeira culinária gourmet focada no seu bem-estar. Ingredientes frescos, selecionados a dedo, preparados por quem entende de nutrição e sabor.</p>
+            <a href="#cardapio" class="btn">Ver Menu de Hoje</a>
         </div>
+        <div class="hero-image">
+            <img src="_MG_6765.jpg" alt="Prato principal Emkasa Gourmet">
+        </div>
+    </section>
+
+    <section class="features" id="cardapio">
+        <h2>A Nossa Essência</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="_MG_6779.jpg" alt="Ingredientes Selecionados">
+                <div class="card-content">
+                    <h3>Frescura Garantida</h3>
+                    <p>Trabalhamos apenas com produtores locais para garantir que o melhor da natureza chega ao seu prato.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="_MG_6797.jpg" alt="Preparo Gourmet">
+                <div class="card-content">
+                    <h3>Preparo Artesanal</h3>
+                    <p>Cada refeição é pensada ao pormenor, combinando técnicas de alta gastronomia com o conforto da comida caseira.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <h3>Emkasa Gourmet</h3>
+        <p style="margin-top: 1rem; margin-bottom: 2rem;">Transformando a forma como você come, sem abrir mão do prazer.</p>
+        <a href="https://api.whatsapp.com/send?phone=SEUNUMEROAQUI" class="btn" style="background-color: var(--white); color: var(--primary);">Fale Conosco no WhatsApp</a>
+        <p style="margin-top: 3rem;">&copy; 2026 Emkasa Gourmet. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-        // Click nos cards para ir pro WhatsApp (melhor UX)
-        document.querySelectorAll('.box-card').forEach(card => {
-            card.addEventListener('click', function() {
-                const boxName = this.querySelector('h3').textContent;
-                const msg = `Olá! Gostaria de saber mais sobre a ${boxName}.`;
-                alert('⚠️ Configure o número do WhatsApp primeiro!');
-                // window.open(`https://wa.me/557930214868?text=${encodeURIComponent(msg)}`, '_blank');
-            });
-        });
-    </script>
 </body>
 </html>
