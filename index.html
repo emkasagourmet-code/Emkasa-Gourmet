@@ -10,21 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
 
     <style>
-        /* Variáveis de Cores (Paleta Saudável/Gourmet) */
         :root {
             --primary: #2d5a27;    /* Verde escuro natural */
-            --secondary: #d97736;  /* Laranja terra / apetite */
-            --dark: #2c2c2c;       /* Cinza escuro para texto */
-            --light: #f9f9f6;      /* Fundo bege muito claro */
+            --secondary: #d97736;  /* Laranja terra */
+            --dark: #2c2c2c;       
+            --light: #f9f9f6;      
             --white: #ffffff;
         }
 
-        /* Reset Básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Montserrat', sans-serif;
@@ -33,18 +27,13 @@
             line-height: 1.6;
         }
 
-        /* Tipografia de Destaque */
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            color: var(--primary);
-        }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--primary); }
 
-        /* Cabeçalho */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 5%;
+            padding: 1rem 5%;
             background-color: var(--white);
             box-shadow: 0 2px 15px rgba(0,0,0,0.05);
             position: sticky;
@@ -52,10 +41,7 @@
             z-index: 100;
         }
 
-        header img {
-            max-height: 60px; /* Ajuste o tamanho do seu logótipo aqui */
-            object-fit: contain;
-        }
+        header img { max-height: 50px; }
 
         .btn {
             display: inline-block;
@@ -65,208 +51,121 @@
             text-decoration: none;
             border-radius: 30px;
             font-weight: 600;
-            font-size: 0.9rem;
             transition: all 0.3s ease;
-            text-align: center;
         }
 
-        .btn:hover {
-            background-color: var(--secondary);
-            transform: translateY(-2px);
-        }
+        .btn:hover { background-color: var(--secondary); transform: translateY(-2px); }
 
-        .btn-outline {
-            background-color: transparent;
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            margin-top: 1rem;
-            width: 100%;
-        }
-
-        .btn-outline:hover {
-            background-color: var(--primary);
-            color: var(--white);
-        }
-
-        /* Secção Principal (Hero) */
+        /* HERO SECTION */
         .hero {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            padding: 5rem 5%;
-            min-height: 80vh;
+            padding: 4rem 5%;
+            min-height: 70vh;
+            gap: 2rem;
         }
 
-        .hero-text {
-            flex: 1;
-            padding-right: 3rem;
+        .hero-text { flex: 1; }
+        .hero-text h1 { font-size: 3rem; margin-bottom: 1.5rem; }
+        .hero-image { flex: 1; text-align: right; }
+        .hero-image img { 
+            width: 100%; max-width: 550px; border-radius: 15px; 
+            box-shadow: 20px 20px 0px var(--primary);
         }
 
-        .hero-text h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            color: #555;
-            max-width: 90%;
-        }
-
-        .hero-image {
-            flex: 1;
-            position: relative;
-        }
-
-        /* Imagem principal com aspeto curvo/moderno */
-        .hero-image img {
-            width: 100%;
-            height: 600px;
-            object-fit: cover;
-            border-radius: 20px 100px 20px 100px;
-            box-shadow: 0 20px 40px rgba(45, 90, 39, 0.15);
-        }
-
-        /* Secção de Produtos */
-        .products {
-            padding: 5rem 5%;
-            background-color: var(--white);
-            text-align: center;
-        }
-
-        .products h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .products > p {
-            margin-bottom: 3rem;
-            color: #666;
-            font-size: 1.1rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background: var(--light);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            text-align: left;
-            border: 1px solid #eee;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .card img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-        }
-
-        .card-content {
-            padding: 1.5rem;
+        /* ABOUT / CHEF SECTION */
+        .about-chef {
             display: flex;
-            flex-direction: column;
-            height: calc(100% - 280px);
+            align-items: center;
+            padding: 5rem 5%;
+            background-color: #f1f3ee;
+            gap: 4rem;
         }
 
-        .card-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+        .about-image { flex: 1; }
+        .about-image img { 
+            width: 100%; border-radius: 20px; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
+
+        .about-text { flex: 1.2; }
+        .about-text h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .about-text p { font-size: 1.1rem; margin-bottom: 1rem; color: #444; }
+
+        /* PRODUCTS SECTION */
+        .products { padding: 5rem 5%; background-color: var(--white); text-align: center; }
+        .products h2 { font-size: 2.5rem; margin-bottom: 3rem; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 2rem; max-width: 1100px; margin: 0 auto; 
+        }
+
+        .card { 
+            background: var(--light); border-radius: 15px; overflow: hidden; 
+            transition: 0.3s; text-align: left; border: 1px solid #eee;
+        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .card-content { padding: 1.5rem; }
+        .card-content h3 { margin-bottom: 0.5rem; }
+
+        footer { background-color: var(--primary); color: var(--white); text-align: center; padding: 4rem 5%; }
         
-        .card-content p {
-            color: #555;
-            flex-grow: 1;
-        }
-
-        /* Rodapé */
-        footer {
-            background-color: var(--primary);
-            color: var(--white);
-            text-align: center;
-            padding: 3rem 5%;
-        }
-
-        footer p {
-            opacity: 0.8;
-            font-size: 0.9rem;
-        }
-
-        /* Responsividade para Telemóveis */
         @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                padding: 3rem 5%;
-                text-align: center;
-            }
-            .hero-text {
-                padding-right: 0;
-                margin-bottom: 3rem;
-            }
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-            .hero-text p {
-                max-width: 100%;
-            }
-            .hero-image img {
-                height: 400px;
-                border-radius: 20px 50px 20px 50px;
-            }
+            .hero, .about-chef { flex-direction: column; text-align: center; }
+            .hero-text h1 { font-size: 2.2rem; }
+            .about-image { order: 2; }
+            .about-text { order: 1; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="logo-emkasa.png" alt="Emkasa Gourmet Logo">
-        <a href="#produtos" class="btn">Fazer Pedido</a>
+        <img src="logo-emkasa.png" alt="Emkasa Gourmet">
+        <a href="https://wa.me/SEUNUMERO" class="btn">Pedir no WhatsApp</a>
     </header>
 
     <section class="hero">
         <div class="hero-text">
-            <h1>Saúde e Sabor em perfeita harmonia.</h1>
-            <p>Descubra a verdadeira culinária gourmet focada no seu bem-estar. Ingredientes frescos, selecionados a dedo e preparados por quem entende de nutrição.</p>
-            <a href="#produtos" class="btn">Conheça o nosso menu</a>
+            <h1>Saúde e Sabor em cada detalhe.</h1>
+            <p>Refeições gourmet preparadas com ingredientes frescos e selecionados para quem não abre mão do prazer de comer bem.</p>
+            <br>
+            <a href="#produtos" class="btn">Ver Cardápio</a>
         </div>
         <div class="hero-image">
-            <img src="_MG_6779.jpg" alt="Experiência Emkasa Gourmet">
+            <img src="_MG_6779.jpg" alt="Prato Saudável">
+        </div>
+    </section>
+
+    <section class="about-chef">
+        <div class="about-image">
+            <img src="chef.jpg" alt="Chef Emkasa Gourmet">
+        </div>
+        <div class="about-text">
+            <h2>Excelência Gourmet na sua mesa</h2>
+            <p>Na <strong>Emkasa Gourmet</strong>, acreditamos que a alimentação saudável deve ser uma experiência sensorial completa.</p>
+            <p>Cada detalhe, desde a escolha dos produtores locais até a montagem final, é supervisionado de perto para garantir o padrão Michelin de qualidade e frescura.</p>
+            <p><i>"Minha missão é provar que comer de forma nutritiva pode ser o momento mais saboroso do seu dia."</i></p>
         </div>
     </section>
 
     <section class="products" id="produtos">
-        <h2>Os Nossos Favoritos</h2>
-        <p>Experimente os pratos que já conquistaram os nossos clientes.</p>
-        
+        <h2>Destaques do Menu</h2>
         <div class="grid">
             <div class="card">
                 <img src="_MG_6765.jpg" alt="Farofa Nutritiva">
                 <div class="card-content">
                     <h3>Farofa Nutritiva</h3>
-                    <p>Crocante, incrivelmente saborosa e feita com ingredientes que nutrem de verdade o seu corpo. O acompanhamento perfeito para qualquer refeição.</p>
-                    <a href="https://api.whatsapp.com/send?phone=SEUNUMEROAQUI&text=Olá! Gostaria de encomendar a Farofa Nutritiva." class="btn btn-outline" target="_blank">Encomendar</a>
+                    <p>Crocante e artesanal, feita com mix de castanhas e temperos naturais.</p>
                 </div>
             </div>
-
             <div class="card">
                 <img src="Blend.jpeg" alt="Blend's Veganos">
                 <div class="card-content">
                     <h3>Blend's Veganos</h3>
-                    <p>A combinação perfeita de proteínas vegetais, temperos frescos e naturais. Saudável, incrivelmente suculento e 100% vegano.</p>
-                    <a href="https://api.whatsapp.com/send?phone=SEUNUMEROAQUI&text=Olá! Gostaria de encomendar os Blend's Veganos." class="btn btn-outline" target="_blank">Encomendar</a>
+                    <p>Sabor intenso e textura suculenta em uma base 100% vegetal.</p>
                 </div>
             </div>
         </div>
@@ -274,9 +173,8 @@
 
     <footer>
         <h3>Emkasa Gourmet</h3>
-        <p style="margin-top: 1rem; margin-bottom: 2rem;">Transformando a forma como você come, sem abrir mão do prazer.</p>
-        <a href="https://api.whatsapp.com/send?phone=SEUNUMEROAQUI" class="btn" style="background-color: var(--white); color: var(--primary);" target="_blank">Fale Conosco no WhatsApp</a>
-        <p style="margin-top: 3rem;">&copy; 2026 Emkasa Gourmet. Todos os direitos reservados.</p>
+        <p>Alimentação que nutre e apaixona.</p>
+        <p style="margin-top: 2rem; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 Emkasa Gourmet. Todos os direitos reservados.</p>
     </footer>
 
 </body>
