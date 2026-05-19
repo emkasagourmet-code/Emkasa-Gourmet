@@ -92,6 +92,38 @@
         .about-text h2 { font-size: 2.5rem; margin-bottom: 1.5rem; }
         .about-text p { font-size: 1.1rem; margin-bottom: 1rem; color: #444; }
 
+        /* VIDEO SECTION */
+        .video-section {
+            padding: 5rem 5%;
+            background-color: var(--light);
+            text-align: center;
+        }
+
+        .video-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .video-section p {
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            background-color: #000;
+        }
+
+        .video-container video, .video-container iframe {
+            width: 100%;
+            display: block;
+            border: none;
+        }
+
         /* PRODUCTS SECTION */
         .products { padding: 5rem 5%; background-color: var(--white); text-align: center; }
         .products h2 { font-size: 2.5rem; margin-bottom: 3rem; }
@@ -124,7 +156,7 @@
 
     <header>
         <img src="logo-emkasa.png" alt="Emkasa Gourmet">
-        <a href="https://wa.me/SEUNUMERO" class="btn">Pedir no WhatsApp</a>
+        <a href="https://wa.me/5521999999999" class="btn">Pedir no WhatsApp</a>
     </header>
 
     <section class="hero">
@@ -141,14 +173,24 @@
 
     <section class="about-chef">
         <div class="about-image">
-            <img src="chef.jpg" alt="Chef Emkasa Gourmet">
+            <img src="AngelaAi" alt="Chef Angela - Emkasa Gourmet">
         </div>
         <div class="about-text">
             <h2>Excelência Gourmet na sua mesa</h2>
             <p>Na <strong>Emkasa Gourmet</strong>, acreditamos que a alimentação saudável deve ser uma experiência sensorial completa.</p>
-            <p>Cada detalhe, desde a escolha dos produtores locais até a montagem final, é supervisionado de perto para garantir o padrão Michelin de qualidade e frescura.</p>
-            <p><i>"Minha missão é provar que comer de forma nutritiva pode ser o momento mais saboroso do seu dia."</i></p>
+            <p>Cada detalhe, desde a escolha dos produtores locais até à montagem final, é supervisionado de perto para garantir o padrão de alta gastronomia.</p>
+            <p><i>"A nossa missão é provar que comer de forma nutritiva e saudável pode ser o momento mais prazeroso e sofisticado do seu dia."</i></p>
         </div>
+    </section>
+
+    <section class="video-section">
+        <h2>Bastidores da Nossa Cozinha</h2>
+        <p>Veja como preparamos os seus pratos com todo o carinho e higiene.</p>
+        <div class="video-container">
+            
+            <iframe height="450" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+            </div>
     </section>
 
     <section class="products" id="produtos">
@@ -158,14 +200,14 @@
                 <img src="_MG_6765.jpg" alt="Farofa Nutritiva">
                 <div class="card-content">
                     <h3>Farofa Nutritiva</h3>
-                    <p>Crocante e artesanal, feita com mix de castanhas e temperos naturais.</p>
+                    <p>Crocante e artesanal, feita com um mix rico de castanhas, sementes e temperos naturais.</p>
                 </div>
             </div>
             <div class="card">
                 <img src="Blend.jpeg" alt="Blend's Veganos">
                 <div class="card-content">
                     <h3>Blend's Veganos</h3>
-                    <p>Sabor intenso e textura suculenta em uma base 100% vegetal.</p>
+                    <p>Sabor intenso, aroma irresistível e textura suculenta em uma base 100% vegetal e saudável.</p>
                 </div>
             </div>
         </div>
