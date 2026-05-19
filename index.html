@@ -67,11 +67,25 @@
             font-weight: 600;
             font-size: 0.9rem;
             transition: all 0.3s ease;
+            text-align: center;
         }
 
         .btn:hover {
             background-color: var(--secondary);
             transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: var(--white);
         }
 
         /* Secção Principal (Hero) */
@@ -115,48 +129,67 @@
             box-shadow: 0 20px 40px rgba(45, 90, 39, 0.15);
         }
 
-        /* Secção de Destaques (Features) */
-        .features {
+        /* Secção de Produtos */
+        .products {
             padding: 5rem 5%;
             background-color: var(--white);
             text-align: center;
         }
 
-        .features h2 {
+        .products h2 {
             font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .products > p {
             margin-bottom: 3rem;
+            color: #666;
+            font-size: 1.1rem;
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2.5rem;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .card {
             background: var(--light);
             border-radius: 15px;
             overflow: hidden;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+            border: 1px solid #eee;
         }
 
         .card:hover {
             transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
         .card img {
             width: 100%;
-            height: 250px;
+            height: 280px;
             object-fit: cover;
         }
 
         .card-content {
             padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            height: calc(100% - 280px);
         }
 
         .card-content h3 {
             font-size: 1.5rem;
             margin-bottom: 0.5rem;
+        }
+        
+        .card-content p {
+            color: #555;
+            flex-grow: 1;
         }
 
         /* Rodapé */
@@ -200,44 +233,49 @@
 
     <header>
         <img src="logo-emkasa.png" alt="Emkasa Gourmet Logo">
-        <a href="#contato" class="btn">Faça o seu Pedido</a>
+        <a href="#produtos" class="btn">Fazer Pedido</a>
     </header>
 
     <section class="hero">
         <div class="hero-text">
             <h1>Saúde e Sabor em perfeita harmonia.</h1>
-            <p>Descubra a verdadeira culinária gourmet focada no seu bem-estar. Ingredientes frescos, selecionados a dedo, preparados por quem entende de nutrição e sabor.</p>
-            <a href="#cardapio" class="btn">Ver Menu de Hoje</a>
+            <p>Descubra a verdadeira culinária gourmet focada no seu bem-estar. Ingredientes frescos, selecionados a dedo e preparados por quem entende de nutrição.</p>
+            <a href="#produtos" class="btn">Conheça o nosso menu</a>
         </div>
         <div class="hero-image">
-            <img src="_MG_6765.jpg" alt="Prato principal Emkasa Gourmet">
+            <img src="_MG_6779.jpg" alt="Experiência Emkasa Gourmet">
         </div>
     </section>
 
-    <section class="features" id="cardapio">
-        <h2>A Nossa Essência</h2>
+    <section class="products" id="produtos">
+        <h2>Os Nossos Favoritos</h2>
+        <p>Experimente os pratos que já conquistaram os nossos clientes.</p>
+        
         <div class="grid">
             <div class="card">
-                <img src="_MG_6779.jpg" alt="Ingredientes Selecionados">
+                <img src="_MG_6765.jpg" alt="Farofa Nutritiva">
                 <div class="card-content">
-                    <h3>Frescura Garantida</h3>
-                    <p>Trabalhamos apenas com produtores locais para garantir que o melhor da natureza chega ao seu prato.</p>
+                    <h3>Farofa Nutritiva</h3>
+                    <p>Crocante, incrivelmente saborosa e feita com ingredientes que nutrem de verdade o seu corpo. O acompanhamento perfeito para qualquer refeição.</p>
+                    <a href="https://api.whatsapp.com/send?phone=SEUNUMEROAQUI&text=Olá! Gostaria de encomendar a Farofa Nutritiva." class="btn btn-outline" target="_blank">Encomendar</a>
                 </div>
             </div>
+
             <div class="card">
-                <img src="_MG_6797.jpg" alt="Preparo Gourmet">
+                <img src="Blend.jpeg" alt="Blend's Veganos">
                 <div class="card-content">
-                    <h3>Preparo Artesanal</h3>
-                    <p>Cada refeição é pensada ao pormenor, combinando técnicas de alta gastronomia com o conforto da comida caseira.</p>
+                    <h3>Blend's Veganos</h3>
+                    <p>A combinação perfeita de proteínas vegetais, temperos frescos e naturais. Saudável, incrivelmente suculento e 100% vegano.</p>
+                    <a href="https://api.whatsapp.com/send?phone=SEUNUMEROAQUI&text=Olá! Gostaria de encomendar os Blend's Veganos." class="btn btn-outline" target="_blank">Encomendar</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contato">
+    <footer>
         <h3>Emkasa Gourmet</h3>
         <p style="margin-top: 1rem; margin-bottom: 2rem;">Transformando a forma como você come, sem abrir mão do prazer.</p>
-        <a href="https://api.whatsapp.com/send?phone=7930214868" class="btn" style="background-color: var(--white); color: var(--primary);">Fale Conosco no WhatsApp</a>
+        <a href="https://api.whatsapp.com/send?phone=SEUNUMEROAQUI" class="btn" style="background-color: var(--white); color: var(--primary);" target="_blank">Fale Conosco no WhatsApp</a>
         <p style="margin-top: 3rem;">&copy; 2026 Emkasa Gourmet. Todos os direitos reservados.</p>
     </footer>
 
